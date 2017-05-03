@@ -13,8 +13,8 @@
 	<div class="Wrapper">
 		
 		<header class="Header">
-			<img class="Header-logo" src="img/logo.svg" alt="Is logo." />
-			<div class="Header-mobileNavTrigger" id="mobileNavTrigger" onclick="openNavigation()">
+			<img class="Header-logo" src="img/logo.svg" alt="Is logo." onclick="showFrontpage()" />
+			<div class="Header-mobileNavTrigger" id="mobileNavTrigger" onclick="openCloseNavigation()">
 				<div class="Header-mobileNavTrigger-part"></div>
 				<div class="Header-mobileNavTrigger-part"></div>
 				<div class="Header-mobileNavTrigger-part"></div>
@@ -123,7 +123,7 @@
 						</div>
 					</div>
 					<div class="Assortment-top-form-group submit">
-						<button type="submit">Send</button>
+						<button type="button" onclick="openConfirmation()">Send</button>
 					</div>
 				</form>
 			</section>
@@ -162,6 +162,13 @@
 					</div>
 				</div>
 			</section>
+			<div class="Assortment-confirmation" id="confirmation">
+				<div class="Assortment-confirmation-message">
+					<div>Takk!</div>
+					<div>Din kommentar er lagret.</div>
+					<button onclick="hideConfirmation()">Ok</button>
+				</div>
+			</div>
 		</div>
 		
 	</div>
