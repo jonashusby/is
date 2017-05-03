@@ -12,6 +12,100 @@
 <body>
 	<div class="Wrapper">
 		
+		<header class="Header">
+			<img class="Header-logo" src="img/logo.svg" alt="Is logo." />
+			<div class="Header-mobileNavTrigger" id="mobileNavTrigger" onclick="openNavigation()">
+				<div class="Header-mobileNavTrigger-part"></div>
+				<div class="Header-mobileNavTrigger-part"></div>
+				<div class="Header-mobileNavTrigger-part"></div>
+			</div>
+			<nav class="Header-navigation">
+				<ul>
+					<li>
+						<a href="#" class="active" onclick="showFrontpage()">Hjem</a>
+					</li>
+					<li>
+						<a href="#" onclick="showAssortment()">Sortiment</a>
+					</li>
+					<li>
+						<a href="#">Inspirasjon</a>
+					</li>
+					<li>
+						<a href="#">Vår historie</a>
+					</li>
+					<li>
+						<a href="#">Kontakt</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<div class="Frontpage">
+			
+			<div class="Frontpage-icecreams">
+				<div class="Frontpage-icecreams-icecream classic">
+					<div class="Frontpage-icecreams-icecream-decorIcecream"></div>
+					<div class="Frontpage-icecreams-icecream-decorIcecream"></div>
+					<div class="Frontpage-icecreams-icecream-decorIcecream"></div>
+					<div class="Frontpage-icecreams-icecream-decorIcecream"></div>
+					<div class="Frontpage-icecreams-icecream-decorIcecream"></div>
+					<div class="Frontpage-icecreams-icecream-decorIcecream"></div>
+				</div>
+				<div class="Frontpage-icecreams-icecream fruit">
+					<div class="Frontpage-icecreams-icecream-decorIcecream"></div>
+					<div class="Frontpage-icecreams-icecream-decorIcecream"></div>
+					<div class="Frontpage-icecreams-icecream-decorIcecream"></div>
+					<div class="Frontpage-icecreams-icecream-decorIcecream"></div>
+					<div class="Frontpage-icecreams-icecream-decorIcecream"></div>
+					<div class="Frontpage-icecreams-icecream-decorIcecream"></div>
+				</div>
+				<div class="Frontpage-icecreams-icecream cones">
+					<div class="Frontpage-icecreams-icecream-decorIcecream"></div>
+					<div class="Frontpage-icecreams-icecream-decorIcecream"></div>
+					<div class="Frontpage-icecreams-icecream-decorIcecream"></div>
+					<div class="Frontpage-icecreams-icecream-decorIcecream"></div>
+					<div class="Frontpage-icecreams-icecream-decorIcecream"></div>
+					<div class="Frontpage-icecreams-icecream-decorIcecream"></div>
+				</div>
+				<div class="Frontpage-icecreams-info">
+					<h1 id="icecreamTitle">Klassisk is</h1>
+					<span id="icecreamText">Men like god for det</span>
+				</div>
+			</div>
+			<div class="Frontpage-icecreamNavigation">
+				<div class="active" id="navClassic" onclick="showClassic()">
+					<div></div>
+				</div>
+				<div id="navFruit" onclick="showFruit()">
+					<div></div>
+				</div>
+				<div id="navCones" onclick="showCones()">
+					<div></div>
+				</div>
+			</div>
+		</div>
+		<div class="Assortment">
+			<div class="Assortment-icecream"></div>
+			<form class="Assortment-form">
+				<div class="Assortment-form-keyInfo">
+					<h1>Fruktis</h1>
+					<span>Vad tykker du om fruktis?</span>
+				</div>
+				<div class="Assortment-form-group name">
+					<label>Navn</label>
+					<input type="text" name="name" placeholder="Ola Nordmann" />
+				</div>
+				<div class="Assortment-form-group email">
+					<label>E-post</label>
+					<input type="text" name="name" placeholder="ola@gmail.com" />
+				</div>
+				<div class="Assortment-form-group comment">
+					<label>Kommentar om fruktis</label>
+					<textarea rows="5" placeholder="Verldens beste is..."></textarea>
+				</div>
+			</form>
+		</div>
+		
 	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
 	<script src="js/app.js"></script>

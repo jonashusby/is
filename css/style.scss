@@ -1,0 +1,326 @@
+$spacing: 25px;
+$desktopSize: 800px;
+
+@font-face {
+    font-family: Vollkorn;
+    src: url('../font/TTF/Vollkorn-Regular.ttf');
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	background-color: #dddddd;
+	height: 100%;
+	overflow-x: hidden;
+	font-family: Vollkorn, serif;
+	font-weight: 100;
+}
+.Wrapper {
+	height: 100%;
+}
+.Header {
+	padding: $spacing;
+	&-logo {
+		width: 25px;
+	}
+	&-mobileNavTrigger {
+		position: absolute;
+		top: $spacing;
+		right: $spacing;
+		z-index: 30;
+		width: 35px;
+		&-part {
+			width: 100%;
+		    height: 4px;
+		    background-color: #0286c4;
+		    margin-bottom: 6px;
+		    border-radius: 2px;
+		}
+		@media ( min-width: $desktopSize ) {
+			display: none;
+		}
+	}
+	.Header-navigation {
+		position: fixed;
+		z-index: 20;
+		top: 0px;
+		right: -100%;
+		width: calc(100% - 75px); // subtract width of logo and spacing
+		height: 100%;
+		background-color: #0286c4;
+		ul {
+			margin-left: $spacing;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			list-style: none;
+			padding: 0;
+			li {
+				margin-bottom: 10px;
+				a {
+					color: white;
+					text-decoration: none;
+					font-size: 2em;
+					font-family: Vollkorn, serif;
+				}
+				.active {
+					border-bottom: 3px solid white;
+				}
+			}
+		}
+		@media ( min-width: $desktopSize ) {
+			position: absolute;
+			top: $spacing;
+			left: 50%;
+			margin-left: -300px;
+			width: 600px;
+			height: auto;
+			background-color: transparent;
+			ul {
+				position: static;
+				margin-top: 0;
+				margin-left: 0;
+				transform: translateY(0);
+				text-align: center;
+				li {
+					display: inline-block;
+					margin-bottom: 0;
+					margin-right: $spacing * 2;
+					a {
+						color: black;
+						font-size: 1em;
+					}
+					.active {
+						border-bottom: 3px solid black;
+					}
+				}
+				li:last-of-type {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}
+
+.Frontpage {
+	display: none;
+	height: 100%;
+	padding: $spacing;
+	background: url('../img/decor.png') center center fixed;
+	background-size: auto 100%;
+	@media ( min-width: $desktopSize ) {
+		background-size: cover;
+	}
+	&-icecreams {
+		position: relative;
+		width: 100%;
+		height: 400px;
+		&-icecream {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			&-decorIcecream {
+				display: none;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				height: 120px;
+				width: 120px;
+				@media ( min-width: $desktopSize ) {
+					display: block;
+				}
+				&:nth-child(1) {
+					margin-top: -170px;
+					margin-left: -300px;
+					transform: rotate(-20deg);
+				}
+				&:nth-child(2) {
+					margin-top: 0px;
+					margin-left: -400px;
+					transform: rotate(-120deg);
+					height: 100px;
+					width: 100px;
+				}
+				&:nth-child(3) {
+					margin-top: 60px;
+					margin-left: -250px;
+					transform: rotate(30deg);
+				}
+				&:nth-child(4) {
+					margin-top: -170px;
+					margin-left: 250px;
+					transform: rotate(-80deg);
+				}
+				&:nth-child(5) {
+					margin-top: 0px;
+					margin-left: 170px;
+					transform: rotate(30deg);
+					width: 170px;
+					height: 170px;
+				}
+				&:nth-child(6) {
+					margin-top: 120px;
+					margin-left: 350px;
+					transform: rotate(190deg);
+					width: 70px;
+					height: 70px;
+				}
+			}
+		}
+		.classic {
+			background: url(../img/icecreams/classic.png);
+			.Frontpage-icecreams-icecream-decorIcecream {
+				background: url(../img/icecreams/classic.png);
+			}
+		}
+		.fruit {
+			background: url(../img/icecreams/fruit.png);
+			top: 25%;
+			left: 75%;
+			height: 50%;
+			width: 50%;
+			.Frontpage-icecreams-icecream-decorIcecream {
+				background: url(../img/icecreams/fruit.png);
+			}
+		}
+		.cones {
+			background: url(../img/icecreams/cones.png);
+			top: 25%;
+			left: -25%;
+			height: 50%;
+			width: 50%;
+			.Frontpage-icecreams-icecream-decorIcecream {
+				background: url(../img/icecreams/cones.png);
+			}
+		}
+		.classic, .fruit, .cones {
+			background-repeat: no-repeat;
+		    background-size: auto 100%;
+		    background-position: center;
+		    .Frontpage-icecreams-icecream-decorIcecream {
+				background-repeat: no-repeat;
+				background-size: auto 100%;
+				background-position: center;
+			}
+		}
+		&-info {
+			font-family: Vollkorn, serif;
+			z-index: 10;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 100%;
+			h1, span {
+				text-align: center;
+				font-weight: 100;
+			}
+			h1 {
+				font-size: 2.7em;
+				margin-bottom: 0;
+				line-height: 100%;
+			}
+			span {
+				display: block;
+			}
+		}
+		@media ( min-width: $desktopSize ) {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			overflow-x: hidden;
+			.fruit {
+				top: 0;
+				left: 100%;
+				height: 100%;
+				width: 100%;
+			}
+			.cones {
+				top: 0;
+				left: 200%;
+				height: 100%;
+				width: 100%;
+			}
+		}
+	}
+	&-icecreamNavigation {
+		margin-top: $spacing * 2;
+		overflow: auto;
+		text-align: center;
+		> div {
+			cursor: pointer;
+			display: inline-block;
+			box-sizing: border-box;
+			width: 16px;
+			height: 16px;
+			padding: 3px;
+			border-radius: 50%;
+			margin-right: $spacing / 2;
+			div {
+				width: 100%;
+				height: 100%;
+				background-color: black;
+				border-radius: 50%;
+			}
+		}
+		> div:last-of-type {
+			margin-right: 0;
+		}
+		> div:hover {
+			div {
+				background-color: #f66e83;
+			}
+		}
+		.active {
+			border: 1px solid black;
+			div {
+				background-color: #f66e83;
+			}
+		}
+		@media ( min-width: $desktopSize ) {
+			position: absolute;
+			bottom: 0px;
+			width: 100%;
+			bottom: $spacing;
+		}
+	}
+}
+.Assortment {
+	display: block;
+	padding: $spacing;
+	&-icecream {
+		width: 100%;
+		height: 300px;
+		background: url(../img/icecreams/fruit.png);
+		background-repeat: no-repeat;
+		background-size: auto 100%;
+	    background-position: center;
+	    transform: rotate(20deg);
+	}
+	&-form {
+		position: relative;
+		top: -100px;
+		display: block;
+		&-keyInfo {
+			margin-bottom: $spacing;
+			h1 {
+				font-size: 2.7em;
+				margin-bottom: $spacing / 2;
+				line-height: 100%;
+			}
+		}
+		&-group {
+			margin-bottom: $spacing;
+			label {
+				display: block;
+				margin-bottom: 2px;
+			}
+			input, textarea {
+				padding: 10px;
+				width: 100%;
+				box-sizing: border-box;
+			}
+		}
+	}
+}
+

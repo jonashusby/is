@@ -1,3 +1,268 @@
+@font-face {
+  font-family: Vollkorn;
+  src: url("../font/TTF/Vollkorn-Regular.ttf"); }
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #dddddd;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: Vollkorn, serif;
+  font-weight: 100; }
 
+.Wrapper {
+  height: 100%; }
+
+.Header {
+  padding: 25px; }
+  .Header-logo {
+    width: 25px; }
+  .Header-mobileNavTrigger {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    z-index: 30;
+    width: 35px; }
+    .Header-mobileNavTrigger-part {
+      width: 100%;
+      height: 4px;
+      background-color: #0286c4;
+      margin-bottom: 6px;
+      border-radius: 2px; }
+    @media (min-width: 800px) {
+      .Header-mobileNavTrigger {
+        display: none; } }
+  .Header .Header-navigation {
+    position: fixed;
+    z-index: 20;
+    top: 0px;
+    right: -100%;
+    width: calc(100% - 75px);
+    height: 100%;
+    background-color: #0286c4; }
+    .Header .Header-navigation ul {
+      margin-left: 25px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      list-style: none;
+      padding: 0; }
+      .Header .Header-navigation ul li {
+        margin-bottom: 10px; }
+        .Header .Header-navigation ul li a {
+          color: white;
+          text-decoration: none;
+          font-size: 2em;
+          font-family: Vollkorn, serif; }
+        .Header .Header-navigation ul li .active {
+          border-bottom: 3px solid white; }
+    @media (min-width: 800px) {
+      .Header .Header-navigation {
+        position: absolute;
+        top: 25px;
+        left: 50%;
+        margin-left: -300px;
+        width: 600px;
+        height: auto;
+        background-color: transparent; }
+        .Header .Header-navigation ul {
+          position: static;
+          margin-top: 0;
+          margin-left: 0;
+          transform: translateY(0);
+          text-align: center; }
+          .Header .Header-navigation ul li {
+            display: inline-block;
+            margin-bottom: 0;
+            margin-right: 50px; }
+            .Header .Header-navigation ul li a {
+              color: black;
+              font-size: 1em; }
+            .Header .Header-navigation ul li .active {
+              border-bottom: 3px solid black; }
+          .Header .Header-navigation ul li:last-of-type {
+            margin-right: 0; } }
+
+.Frontpage {
+  display: none;
+  height: 100%;
+  padding: 25px;
+  background: url("../img/decor.png") center center fixed;
+  background-size: auto 100%; }
+  @media (min-width: 800px) {
+    .Frontpage {
+      background-size: cover; } }
+  .Frontpage-icecreams {
+    position: relative;
+    width: 100%;
+    height: 400px; }
+    .Frontpage-icecreams-icecream {
+      position: absolute;
+      height: 100%;
+      width: 100%; }
+      .Frontpage-icecreams-icecream-decorIcecream {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 120px;
+        width: 120px; }
+        @media (min-width: 800px) {
+          .Frontpage-icecreams-icecream-decorIcecream {
+            display: block; } }
+        .Frontpage-icecreams-icecream-decorIcecream:nth-child(1) {
+          margin-top: -170px;
+          margin-left: -300px;
+          transform: rotate(-20deg); }
+        .Frontpage-icecreams-icecream-decorIcecream:nth-child(2) {
+          margin-top: 0px;
+          margin-left: -400px;
+          transform: rotate(-120deg);
+          height: 100px;
+          width: 100px; }
+        .Frontpage-icecreams-icecream-decorIcecream:nth-child(3) {
+          margin-top: 60px;
+          margin-left: -250px;
+          transform: rotate(30deg); }
+        .Frontpage-icecreams-icecream-decorIcecream:nth-child(4) {
+          margin-top: -170px;
+          margin-left: 250px;
+          transform: rotate(-80deg); }
+        .Frontpage-icecreams-icecream-decorIcecream:nth-child(5) {
+          margin-top: 0px;
+          margin-left: 170px;
+          transform: rotate(30deg);
+          width: 170px;
+          height: 170px; }
+        .Frontpage-icecreams-icecream-decorIcecream:nth-child(6) {
+          margin-top: 120px;
+          margin-left: 350px;
+          transform: rotate(190deg);
+          width: 70px;
+          height: 70px; }
+    .Frontpage-icecreams .classic {
+      background: url(../img/icecreams/classic.png); }
+      .Frontpage-icecreams .classic .Frontpage-icecreams-icecream-decorIcecream {
+        background: url(../img/icecreams/classic.png); }
+    .Frontpage-icecreams .fruit {
+      background: url(../img/icecreams/fruit.png);
+      top: 25%;
+      left: 75%;
+      height: 50%;
+      width: 50%; }
+      .Frontpage-icecreams .fruit .Frontpage-icecreams-icecream-decorIcecream {
+        background: url(../img/icecreams/fruit.png); }
+    .Frontpage-icecreams .cones {
+      background: url(../img/icecreams/cones.png);
+      top: 25%;
+      left: -25%;
+      height: 50%;
+      width: 50%; }
+      .Frontpage-icecreams .cones .Frontpage-icecreams-icecream-decorIcecream {
+        background: url(../img/icecreams/cones.png); }
+    .Frontpage-icecreams .classic, .Frontpage-icecreams .fruit, .Frontpage-icecreams .cones {
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      background-position: center; }
+      .Frontpage-icecreams .classic .Frontpage-icecreams-icecream-decorIcecream, .Frontpage-icecreams .fruit .Frontpage-icecreams-icecream-decorIcecream, .Frontpage-icecreams .cones .Frontpage-icecreams-icecream-decorIcecream {
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        background-position: center; }
+    .Frontpage-icecreams-info {
+      font-family: Vollkorn, serif;
+      z-index: 10;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%; }
+      .Frontpage-icecreams-info h1, .Frontpage-icecreams-info span {
+        text-align: center;
+        font-weight: 100; }
+      .Frontpage-icecreams-info h1 {
+        font-size: 2.7em;
+        margin-bottom: 0;
+        line-height: 100%; }
+      .Frontpage-icecreams-info span {
+        display: block; }
+    @media (min-width: 800px) {
+      .Frontpage-icecreams {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        overflow-x: hidden; }
+        .Frontpage-icecreams .fruit {
+          top: 0;
+          left: 100%;
+          height: 100%;
+          width: 100%; }
+        .Frontpage-icecreams .cones {
+          top: 0;
+          left: 200%;
+          height: 100%;
+          width: 100%; } }
+  .Frontpage-icecreamNavigation {
+    margin-top: 50px;
+    overflow: auto;
+    text-align: center; }
+    .Frontpage-icecreamNavigation > div {
+      cursor: pointer;
+      display: inline-block;
+      box-sizing: border-box;
+      width: 16px;
+      height: 16px;
+      padding: 3px;
+      border-radius: 50%;
+      margin-right: 12.5px; }
+      .Frontpage-icecreamNavigation > div div {
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        border-radius: 50%; }
+    .Frontpage-icecreamNavigation > div:last-of-type {
+      margin-right: 0; }
+    .Frontpage-icecreamNavigation > div:hover div {
+      background-color: #f66e83; }
+    .Frontpage-icecreamNavigation .active {
+      border: 1px solid black; }
+      .Frontpage-icecreamNavigation .active div {
+        background-color: #f66e83; }
+    @media (min-width: 800px) {
+      .Frontpage-icecreamNavigation {
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        bottom: 25px; } }
+
+.Assortment {
+  display: block;
+  padding: 25px; }
+  .Assortment-icecream {
+    width: 100%;
+    height: 300px;
+    background: url(../img/icecreams/fruit.png);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center;
+    transform: rotate(20deg); }
+  .Assortment-form {
+    position: relative;
+    top: -100px;
+    display: block; }
+    .Assortment-form-keyInfo {
+      margin-bottom: 25px; }
+      .Assortment-form-keyInfo h1 {
+        font-size: 2.7em;
+        margin-bottom: 12.5px;
+        line-height: 100%; }
+    .Assortment-form-group {
+      margin-bottom: 25px; }
+      .Assortment-form-group label {
+        display: block;
+        margin-bottom: 2px; }
+      .Assortment-form-group input, .Assortment-form-group textarea {
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box; }
 
 /*# sourceMappingURL=style.css.map */
