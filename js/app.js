@@ -1,7 +1,10 @@
 var screenSize = document.body.clientWidth;
 
-var frontpage = document.getElementsByClassName("Frontpage");
-var assortment = document.getElementsByClassName("Assortment");
+var frontpage = document.getElementById("frontpage");
+var assortment = document.getElementById("assortment");
+
+var frontpageLink = document.getElementById("frontpageLink");
+var assortmentLink = document.getElementById("assortmentLink");
 
 var classic = document.getElementsByClassName("classic");
 var fruit = document.getElementsByClassName("fruit");
@@ -32,12 +35,24 @@ function openNavigation() {
 }
 
 function showFrontpage() {
-	TweenLite.to(frontpage, 0.3, { opacity: "1" });
+	assortmentLink.classList.remove("active");
 	TweenLite.to(assortment, 0.3, { opacity: "0" });
+	setTimeout(function(){
+		assortment.style.display = "none";
+		frontpage.style.display = "block";
+		TweenLite.to(frontpage, 0.3, { opacity: "1" });
+		frontpageLink.classList.add("active");
+	}, 300);
 }
 function showAssortment() {
+	frontpageLink.classList.remove("active");
 	TweenLite.to(frontpage, 0.3, { opacity: "0" });
-	TweenLite.to(assortment, 0.3, { opacity: "1" });
+	setTimeout(function(){
+		frontpage.style.display = "none";
+		assortment.style.display = "block";
+		TweenLite.to(assortment, 0.3, { opacity: "1" });
+		assortmentLink.classList.add("active");
+	}, 300);
 }
 
 function showClassic() {

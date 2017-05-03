@@ -22,10 +22,10 @@
 			<nav class="Header-navigation">
 				<ul>
 					<li>
-						<a href="#" class="active" onclick="showFrontpage()">Hjem</a>
+						<a href="#" id="frontpageLink" class="active" onclick="showFrontpage()">Hjem</a>
 					</li>
 					<li>
-						<a href="#" onclick="showAssortment-top()">Sortiment</a>
+						<a href="#" id="assortmentLink" onclick="showAssortment()">Sortiment</a>
 					</li>
 					<li>
 						<a href="#">Inspirasjon</a>
@@ -40,7 +40,7 @@
 			</nav>
 		</header>
 
-		<div class="Frontpage">
+		<div class="Frontpage" id="frontpage">
 			
 			<div class="Frontpage-icecreams">
 				<div class="Frontpage-icecreams-icecream classic">
@@ -84,7 +84,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="Assortment">
+		<div class="Assortment" id="assortment">
 			<section class="Assortment-top">
 				<div class="Assortment-top-icecream"></div>
 				<form class="Assortment-top-form">
