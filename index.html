@@ -25,7 +25,7 @@
 						<a href="#" class="active" onclick="showFrontpage()">Hjem</a>
 					</li>
 					<li>
-						<a href="#" onclick="showAssortment()">Sortiment</a>
+						<a href="#" onclick="showAssortment-top()">Sortiment</a>
 					</li>
 					<li>
 						<a href="#">Inspirasjon</a>
@@ -85,25 +85,83 @@
 			</div>
 		</div>
 		<div class="Assortment">
-			<div class="Assortment-icecream"></div>
-			<form class="Assortment-form">
-				<div class="Assortment-form-keyInfo">
-					<h1>Fruktis</h1>
-					<span>Vad tykker du om fruktis?</span>
+			<section class="Assortment-top">
+				<div class="Assortment-top-icecream"></div>
+				<form class="Assortment-top-form">
+					<div class="Assortment-top-form-keyInfo">
+						<h1>Fruktis</h1>
+						<span>Vad tykker du om fruktis?</span>
+					</div>
+					<div class="Assortment-top-form-group name">
+						<label>Navn</label>
+						<input type="text" name="name" placeholder="Ola Nordmann" />
+						<div class="Assortment-top-form-group-error">
+							<span class="Assortment-top-form-group-error-triangle"></span>
+							<span class="Assortment-top-form-group-error-message">
+								Du må skrive inn ditt navn
+							</span>
+						</div>
+					</div>
+					<div class="Assortment-top-form-group email">
+						<label>E-post</label>
+						<input type="text" name="name" placeholder="ola@gmail.com" />
+						<div class="Assortment-top-form-group-error">
+							<span class="Assortment-top-form-group-error-triangle"></span>
+							<span class="Assortment-top-form-group-error-message">
+								Du må skrive inn din e-post
+							</span>
+						</div>
+					</div>
+					<div class="Assortment-top-form-group comment">
+						<label>Kommentar om fruktis</label>
+						<textarea rows="5" placeholder="Verldens beste is..."></textarea>
+						<div class="Assortment-top-form-group-error">
+							<span class="Assortment-top-form-group-error-triangle"></span>
+							<span class="Assortment-top-form-group-error-message">
+								Du må skrive inn en kommentar
+							</span>
+						</div>
+					</div>
+					<div class="Assortment-top-form-group submit">
+						<button type="submit">Send</button>
+					</div>
+				</form>
+			</section>
+			<section class="Assortment-comments">
+				<div class="Assortment-comments-child">
+					<h1 class="Assortment-comments-child-title">Kommentarer</h1>
+					<div class="Assortment-comments-child-comment">
+						<div class="Assortment-comments-child-comment-icecream"></div>
+						<span class="Assortment-comments-child-comment-text">
+							"Jeg elsker Fruktis!"
+						</span>
+						<br />
+						<span class="Assortment-comments-child-comment-name">
+							Sebastian Douche
+						</span>
+					</div>
+					<div class="Assortment-comments-child-comment">
+						<div class="Assortment-comments-child-comment-icecream"></div>
+						<span class="Assortment-comments-child-comment-text">
+							"Sukker sukker sukker sukker"
+						</span>
+						<br />
+						<span class="Assortment-comments-child-comment-name">
+							Nora larsen
+						</span>
+					</div>
+					<div class="Assortment-comments-child-comment">
+						<div class="Assortment-comments-child-comment-icecream"></div>
+						<span class="Assortment-comments-child-comment-text">
+							"Spiste en igår, yummmmm!"
+						</span>
+						<br />
+						<span class="Assortment-comments-child-comment-name">
+							Nora larsen
+						</span>
+					</div>
 				</div>
-				<div class="Assortment-form-group name">
-					<label>Navn</label>
-					<input type="text" name="name" placeholder="Ola Nordmann" />
-				</div>
-				<div class="Assortment-form-group email">
-					<label>E-post</label>
-					<input type="text" name="name" placeholder="ola@gmail.com" />
-				</div>
-				<div class="Assortment-form-group comment">
-					<label>Kommentar om fruktis</label>
-					<textarea rows="5" placeholder="Verldens beste is..."></textarea>
-				</div>
-			</form>
+			</section>
 		</div>
 		
 	</div>

@@ -33,7 +33,7 @@ html, body {
       .Header-mobileNavTrigger {
         display: none; } }
   .Header .Header-navigation {
-    position: fixed;
+    position: absolute;
     z-index: 20;
     top: 0px;
     right: -100%;
@@ -235,34 +235,106 @@ html, body {
         bottom: 25px; } }
 
 .Assortment {
-  display: block;
-  padding: 25px; }
-  .Assortment-icecream {
+  display: block; }
+  .Assortment-top {
+    overflow: auto;
+    box-sizing: border-box;
+    padding: 25px;
+    margin: 0 auto;
     width: 100%;
-    height: 300px;
-    background: url(../img/icecreams/fruit.png);
-    background-repeat: no-repeat;
-    background-size: auto 100%;
-    background-position: center;
-    transform: rotate(20deg); }
-  .Assortment-form {
-    position: relative;
-    top: -100px;
-    display: block; }
-    .Assortment-form-keyInfo {
-      margin-bottom: 25px; }
-      .Assortment-form-keyInfo h1 {
-        font-size: 2.7em;
-        margin-bottom: 12.5px;
-        line-height: 100%; }
-    .Assortment-form-group {
-      margin-bottom: 25px; }
-      .Assortment-form-group label {
-        display: block;
-        margin-bottom: 2px; }
-      .Assortment-form-group input, .Assortment-form-group textarea {
-        padding: 10px;
+    max-width: 800px; }
+    .Assortment-top-icecream {
+      width: 100%;
+      height: 400px;
+      background: url(../img/icecreams/fruit.png);
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      background-position: center;
+      transform: rotate(20deg); }
+      @media (min-width: 800px) {
+        .Assortment-top-icecream {
+          float: left;
+          width: 50%; } }
+    .Assortment-top-form {
+      position: relative;
+      top: -100px;
+      display: block; }
+      .Assortment-top-form-keyInfo {
+        margin-bottom: 25px; }
+        .Assortment-top-form-keyInfo h1 {
+          font-size: 2.7em;
+          margin-bottom: 12.5px;
+          line-height: 100%; }
+      .Assortment-top-form-group {
+        margin-bottom: 25px; }
+        .Assortment-top-form-group label {
+          display: block;
+          margin-bottom: 2px; }
+        .Assortment-top-form-group input, .Assortment-top-form-group textarea {
+          padding: 10px;
+          width: 100%;
+          box-sizing: border-box;
+          border: 0;
+          border-radius: 2px; }
+        .Assortment-top-form-group textarea {
+          resize: vertical; }
+        .Assortment-top-form-group button {
+          float: right;
+          border: 0;
+          border-radius: 2px;
+          padding: 15px 30px;
+          background-color: #0286c4;
+          color: white; }
+        .Assortment-top-form-group-error {
+          position: relative;
+          top: 7px; }
+          .Assortment-top-form-group-error-triangle {
+            position: absolute;
+            top: -7px;
+            left: 5px;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-bottom: 7px solid #ed1c5d; }
+          .Assortment-top-form-group-error-message {
+            padding: 5px;
+            font-size: 0.7em;
+            background-color: #ed1c5d;
+            color: white;
+            border-radius: 2px; }
+      @media (min-width: 800px) {
+        .Assortment-top-form {
+          float: left;
+          top: 0;
+          width: 50%; } }
+  .Assortment-comments {
+    padding: 25px;
+    background-color: white; }
+    .Assortment-comments-child {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 800px; }
+      .Assortment-comments-child-title {
+        font-size: 2em; }
+      .Assortment-comments-child-comment {
+        margin: 0 auto;
         width: 100%;
-        box-sizing: border-box; }
+        max-width: 800px;
+        margin-bottom: 25px; }
+        .Assortment-comments-child-comment-icecream {
+          float: left;
+          width: 20px;
+          height: 60px;
+          background: url(../img/icecreams/fruit.png);
+          background-repeat: no-repeat;
+          background-size: auto 100%;
+          background-position: center;
+          transform: rotate(20deg); }
+        .Assortment-comments-child-comment-text, .Assortment-comments-child-comment-name {
+          margin-left: 25px; }
+        .Assortment-comments-child-comment-text {
+          font-size: 1.2em; }
+        .Assortment-comments-child-comment-name {
+          font-size: 0.8em;
+          color: #f66e83; }
 
 /*# sourceMappingURL=style.css.map */
