@@ -95,13 +95,9 @@ html, body {
   top: 0px;
   left: 0px;
   width: 100%;
-  height: 100%;
-  background: url("../img/decor.png") center center fixed;
-  background-size: auto 100%; }
-  @media (min-width: 800px) {
-    .Frontpage {
-      background-size: cover; } }
+  height: 100%; }
   .Frontpage-icecreams {
+    z-index: 5;
     position: absolute;
     width: 100%;
     height: 400px;
@@ -174,28 +170,13 @@ html, body {
         background: url(../img/icecreams/cones.png); }
     .Frontpage-icecreams .classic, .Frontpage-icecreams .fruit, .Frontpage-icecreams .cones {
       background-repeat: no-repeat;
-      background-size: auto 100%;
-      background-position: center; }
+      background-size: auto 80%;
+      background-position: center;
+      transition: background-size 1.5s; }
       .Frontpage-icecreams .classic .Frontpage-icecreams-icecream-decorIcecream, .Frontpage-icecreams .fruit .Frontpage-icecreams-icecream-decorIcecream, .Frontpage-icecreams .cones .Frontpage-icecreams-icecream-decorIcecream {
         background-repeat: no-repeat;
         background-size: auto 100%;
         background-position: center; }
-    .Frontpage-icecreams-info {
-      font-family: Vollkorn, serif;
-      z-index: 10;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 100%; }
-      .Frontpage-icecreams-info h1, .Frontpage-icecreams-info span {
-        text-align: center;
-        font-weight: 100; }
-      .Frontpage-icecreams-info h1 {
-        font-size: 2.7em;
-        margin-bottom: 0;
-        line-height: 100%; }
-      .Frontpage-icecreams-info span {
-        display: block; }
     @media (min-width: 800px) {
       .Frontpage-icecreams {
         position: absolute;
@@ -212,7 +193,38 @@ html, body {
           left: 200%;
           height: 100%;
           width: 100%; } }
+  .Frontpage-info {
+    cursor: pointer;
+    font-family: Vollkorn, serif;
+    z-index: 50;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 300px;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s;
+    animation: spreadLetters 1s;
+    animation-delay: 1s; }
+    .Frontpage-info:hover {
+      letter-spacing: 5px; }
+@keyframes spreadLetters {
+  0% {
+    letter-spacing: 0; }
+  50% {
+    letter-spacing: 5px; }
+  0% {
+    letter-spacing: 0; } }
+    .Frontpage-info h1, .Frontpage-info span {
+      text-align: center;
+      font-weight: 100; }
+    .Frontpage-info h1 {
+      font-size: 2.7em;
+      margin-bottom: 0;
+      line-height: 100%; }
+    .Frontpage-info span {
+      display: block; }
   .Frontpage-icecreamNavigation {
+    z-index: 20;
     position: absolute;
     top: 50%;
     margin-top: 225px;
@@ -244,7 +256,52 @@ html, body {
     @media (min-width: 800px) {
       .Frontpage-icecreamNavigation {
         margin-top: 250px; } }
-
+  .Frontpage #decorWrapper * {
+    z-index: 10;
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center center; }
+  .Frontpage #decorWrapper .pink.flying {
+    animation: pinkFlying 0.5s; }
+  .Frontpage #decorWrapper .blue.flying {
+    animation: blueFlying 0.5s; }
+  .Frontpage #decorWrapper .yellow.flying {
+    animation: yellowFlying 0.5s; }
+@keyframes pinkFlying {
+  0% {
+    width: 20px;
+    height: 20px; }
+  50% {
+    width: 25px;
+    height: 25px; }
+  100% {
+    width: 20px;
+    height: 20px; } }
+@keyframes blueFlying {
+  0% {
+    width: 20px;
+    height: 20px; }
+  50% {
+    width: 30px;
+    height: 30px; }
+  100% {
+    width: 20px;
+    height: 20px; } }
+@keyframes yellowFlying {
+  0% {
+    width: 20px;
+    height: 20px; }
+  50% {
+    width: 35px;
+    height: 35px; }
+  100% {
+    width: 20px;
+    height: 20px; } }
 .Assortment {
   position: absolute;
   top: 0px;
@@ -366,7 +423,8 @@ html, body {
       padding: 25px;
       position: absolute;
       top: 50%;
-      transform: translateY(-50%);
+      left: 50%;
+      transform: translate(-50%, -50%);
       background-color: rgba(0, 0, 0, 0.9);
       color: white;
       font-size: 1.2em;
@@ -382,7 +440,6 @@ html, body {
         color: white; }
       @media (min-width: 800px) {
         .Assortment-confirmation-message {
-          left: 50%;
-          transform: translate(-50%, -50%); } }
+          left: 50%; } }
 
 /*# sourceMappingURL=style.css.map */

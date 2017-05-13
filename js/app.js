@@ -137,3 +137,250 @@ function removeNavActive() {
 	navFruit.classList.remove("active");
 	navCones.classList.remove("active");
 }
+
+
+
+/* ---------------------------------------------------------
+-------------------- Creative decor ------------------------
+------------------------------------------------------------ */
+
+// variables
+const DECOR_WRAPPER = document.getElementById("decorWrapper");
+const ICECREAM_INFO = document.getElementById("icecreamInfo");
+const MOVE_DISTANCE_OF_PINK_DECOR = 25;
+const MOVE_DISTANCE_OF_BLUE_DECOR = 50;
+const MOVE_DISTANCE_OF_YELLOW_DECOR = 75;
+
+let docWidth = document.documentElement.clientWidth;
+let docHeight = document.documentElement.clientHeight;
+let pinkDecor = document.getElementsByClassName("pink");
+let blueDecor = document.getElementsByClassName("blue");
+let yellowDecor = document.getElementsByClassName("yellow");
+let mainIcecreams = document.getElementsByClassName("Frontpage-icecreams-icecream");
+let numberOfPinkDecor = 0;
+let numberOfBlueDecor = 0;
+let numberOfYellowDecor = 0;
+
+// class decor - which builds the foundation for all decor types
+class Decor {
+	constructor() {
+		this.location = {
+			x: 0,
+			y: 0
+		}
+		this.rotation = 0;
+		this.CSSClass = "";
+		this.bgImage = "";
+	}
+
+	// set methods
+	setLocationX() {
+		this.location.x = Math.random() * (docWidth - 1) + 1;
+	}
+	setLocationY() {
+		this.location.y = Math.random() * (docHeight - 1) + 1;
+	}
+	setRotation() {
+		this.rotation = Math.random() * (360 - 1) + 1;
+	}
+	setCSSClass(CSSClass) {
+		this.CSSClass = CSSClass;
+	}
+	setBgImage(bgImage) {
+		this.bgImage = bgImage;
+	}
+
+	// get methods
+	getLocationX() {
+		return this.location.x;
+	}
+	getLocationY() {
+		return this.location.y;
+	}
+	getRotation() {
+		return this.rotation;
+	}
+	getCSSClass() {
+		return this.CSSClass;
+	}
+	getBgImage() {
+		return this.bgImage;
+	}
+
+	// makes decors move - the distance varies between decor colors
+	move(moveDistance) {
+		let randomDirectionX = Math.random() < 0.5 ? moveDistance : - moveDistance;
+		let randomDirectionY = Math.random() < 0.5 ? moveDistance : - moveDistance;
+		this.location.x += randomDirectionX;
+		this.location.y += randomDirectionY;
+	}
+}
+
+// make less decors if user is on a small screen
+// this increases performance and prevents too much decor on small screens
+if ( docWidth < 800 ) {
+	numberOfPinkDecor = 40;
+	numberOfBlueDecor = 20;
+	numberOfYellowDecor = 10;
+} else {
+	numberOfPinkDecor = 100;
+	numberOfBlueDecor = 50;
+	numberOfYellowDecor = 25;
+}
+
+// produces pink decor
+// pink decor is the most used of the colors
+for (i = 0; i < numberOfPinkDecor; i++) {
+	// set attributes for the decor
+	let decorInst = new Decor();
+	decorInst.setLocationY();
+	decorInst.setLocationX();
+	decorInst.setRotation();
+	decorInst.setCSSClass("pink");
+	decorInst.setBgImage("img/decor_pink.png");
+
+	// create a HTML element
+	let decorEl = document.createElement("div");
+	decorEl.classList.add(decorInst.getCSSClass());
+
+	// insert attributes into HTML element
+	decorEl.style.left = decorInst.getLocationX() + "px";
+	decorEl.style.top = decorInst.getLocationY() + "px";
+	decorEl.style.transform = "rotate(" + decorInst.getRotation() + "deg)";
+	decorEl.style.backgroundImage = "url(" + decorInst.getBgImage() + ")"; 
+
+	// moves decor when users hover it
+	// pink decor moves just a bit when hovered
+	decorEl.onmouseover = function() {
+		// insert new location attributes
+		decorInst.move(MOVE_DISTANCE_OF_PINK_DECOR);
+		decorEl.style.left = decorInst.getLocationX() + "px";
+		decorEl.style.top = decorInst.getLocationY() + "px";
+		// add flying class - which makes the decor appear bigger when flying away from the users hovering
+		decorEl.classList.add("flying");
+		setTimeout(function(){
+			// removes class after animation is finished - to make the same decor movable again
+			decorEl.classList.remove("flying");
+		}, 500);
+	}
+	// appends current decor to the decor wrapper
+	DECOR_WRAPPER.appendChild(decorEl);
+}
+
+// produces blue decor
+// blue decor is the second most used of the colors
+for (i = 0; i < numberOfBlueDecor; i++) {
+	// set attributes for the decor
+	let decorInst = new Decor();
+	decorInst.setLocationY();
+	decorInst.setLocationX();
+	decorInst.setRotation();
+	decorInst.setCSSClass("blue");
+	decorInst.setBgImage("img/decor_blue.png");
+
+	// create a HTML element
+	let decorEl = document.createElement("div");
+	decorEl.classList.add(decorInst.getCSSClass());
+
+	// insert attributes into HTML element
+	decorEl.style.left = decorInst.getLocationX() + "px";
+	decorEl.style.top = decorInst.getLocationY() + "px";
+	decorEl.style.transform = "rotate(" + decorInst.getRotation() + "deg)";
+	decorEl.style.backgroundImage = "url(" + decorInst.getBgImage() + ")"; 
+
+	// moves decor when users hover it
+	// blue decor moves a medium distance away when hovered
+	decorEl.onmouseover = function() {
+		// insert new location attributes
+		decorInst.move(MOVE_DISTANCE_OF_BLUE_DECOR);
+		decorEl.style.left = decorInst.getLocationX() + "px";
+		decorEl.style.top = decorInst.getLocationY() + "px";
+		// add flying class - which makes the decor appear bigger when flying away from the users hovering
+		decorEl.classList.add("flying");
+		setTimeout(function(){
+			// removes class after animation is finished - to make the same decor movable again
+			decorEl.classList.remove("flying");
+		}, 500);
+	}
+	// appends current decor to the decor wrapper
+	DECOR_WRAPPER.appendChild(decorEl);
+}
+
+// produces yellow decor
+// blue decor is the least used of the colors
+for (i = 0; i < numberOfYellowDecor; i++) {
+	// set attributes for the decor
+	let decorInst = new Decor();
+	decorInst.setLocationY();
+	decorInst.setLocationX();
+	decorInst.setRotation();
+	decorInst.setCSSClass("yellow");
+	decorInst.setBgImage("img/decor_yellow.png");
+
+	// create a HTML element
+	let decorEl = document.createElement("div");
+	decorEl.classList.add(decorInst.getCSSClass());
+
+	// insert attributes into HTML element
+	decorEl.style.left = decorInst.getLocationX() + "px";
+	decorEl.style.top = decorInst.getLocationY() + "px";
+	decorEl.style.transform = "rotate(" + decorInst.getRotation() + "deg)";
+	decorEl.style.backgroundImage = "url(" + decorInst.getBgImage() + ")"; 
+
+	// moves decor when users hover it
+	// blue decor moves a long distance away when hovered
+	decorEl.onmouseover = function() {
+		// insert new location attributes
+		decorInst.move(MOVE_DISTANCE_OF_YELLOW_DECOR);
+		decorEl.style.left = decorInst.getLocationX() + "px";
+		decorEl.style.top = decorInst.getLocationY() + "px";
+		// add flying class - which makes the decor appear bigger when flying away from the users hovering
+		decorEl.classList.add("flying");
+		setTimeout(function(){
+			// removes class after animation is finished - to make the same decor movable again
+			decorEl.classList.remove("flying");
+		}, 500);
+	}
+	// appends current decor to the decor wrapper
+	DECOR_WRAPPER.appendChild(decorEl);
+}
+
+// a click on the ice cream info (title and text about the ice cream) executes the following
+ICECREAM_INFO.onclick = function() {
+	// first the pink decor is pulled into the ice cream
+	for ( i = 0; i < pinkDecor.length; i++ ) {
+		pinkDecor[i].style.zIndex = "0";
+		pinkDecor[i].style.left = "50%";
+		pinkDecor[i].style.top = "50%";
+		pinkDecor[i].style.marginLeft = "-10px";
+		pinkDecor[i].style.marginTop = "-10px";
+	}
+	setTimeout(function(){
+		// then the blue decor is pulled in
+		for ( i = 0; i < blueDecor.length; i++ ) {
+			blueDecor[i].style.zIndex = "0";
+			blueDecor[i].style.left = "50%";
+			blueDecor[i].style.top = "50%";
+			blueDecor[i].style.marginLeft = "-10px";
+			blueDecor[i].style.marginTop = "-10px";
+		}
+	}, 500);
+	setTimeout(function(){
+		// and lastly the yellow decor
+		for ( i = 0; i < yellowDecor.length; i++ ) {
+			yellowDecor[i].style.zIndex = "0";
+			yellowDecor[i].style.left = "50%";
+			yellowDecor[i].style.top = "50%";
+			yellowDecor[i].style.marginLeft = "-10px";
+			yellowDecor[i].style.marginTop = "-10px";
+		}
+	}, 1000);
+	// make the ice cream increase its size while pulling in decor
+	for ( i = 0; i < mainIcecreams.length; i++ ) {
+		mainIcecreams[i].style.backgroundSize = "auto 100%";
+	}
+	// hide all decor after it is pulled in - to prevent it from being visible when carousel rotates
+	setTimeout(function(){
+		DECOR_WRAPPER.style.display = "none";
+	}, 1500);
+}
